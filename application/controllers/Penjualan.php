@@ -22,21 +22,11 @@ class Penjualan extends REST_Controller
         $produk = $this->db->get('penjualan_detil')->result();
         $this->response($produk, REST_Controller::HTTP_OK);
 	}
-    public function barang_get()
-    {
-        $id = $this->get('id_produk');
-        $this->db->where('id', $id);
-        $produk = $this->db->get('produk')->row();
-        $this->response($produk, REST_Controller::HTTP_OK);
-    }
-
 
     public function pilihbarang_get(){
         $produk = $this->db->get('produk')->result();
         $this->response($produk, REST_Controller::HTTP_OK);
     }
-
-   
 
     public function nomor_transaksi_post()
     {
